@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
 namespace Azure.Pages
@@ -12,9 +13,11 @@ namespace Azure.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public readonly IConfiguration _config;
+        public IndexModel(ILogger<IndexModel> logger,IConfiguration configuration)
         {
             _logger = logger;
+            _config = configuration;
         }
 
         public void OnGet()

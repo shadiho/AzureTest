@@ -5,6 +5,10 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome Shadi &Aacute; Hanan &Aacute; Kareem & Rayan1</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1 class="display-4">Welcome Shadi &Aacute; Hanan &Aacute; Kareem & Rayan1
+    @{ 
+        var s = Model._config.GetSection("slogan").Value;
+    }
+    </h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core @(s)</a>.</p>
 </div>
